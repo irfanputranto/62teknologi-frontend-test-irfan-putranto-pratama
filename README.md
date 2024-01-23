@@ -21,4 +21,4 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 ## CORS 
 If the API data does not appear, click the link: (https://cors-anywhere.herokuapp.com/corsdemo)
 
-![alt text](https://github.com/irfanputranto/62teknologi-frontend-test-irfan-putranto-pratama/request.png)
+![alt text](https://github.com/irfanputranto/62teknologi-frontend-test-irfan-putranto-pratama/blob/main/request.png)
