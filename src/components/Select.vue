@@ -22,7 +22,7 @@ if (props.options) {
 <template>
     <div>
             <label for="id" class="" :class="props.classTitle">{{ label }} </label>
-        <select :id="id" v-model="selectedOption" @change="handlerSelectChange" class="select select-bordered p-2" :class="props.class">
+        <select :id="id" v-model="selectedOption" @change="handlerSelectChange" class="select select-bordered pl-4" :class="props.class">
             <option disabled selected>Choose</option>
             <option v-for="(option, index) in options" :key="index" :value="option.value">
                 {{ option.label }}
