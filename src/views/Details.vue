@@ -7,7 +7,6 @@ import RatingVue from '../components/Rating.vue';
 import ReviewVue from '../components/Review.vue';
 import BMapsVue from '../components/BMaps.vue';
 import { FwbCarousel } from 'flowbite-vue'
-import PaginationVue from '../components/Pagination.vue';
 
 const detailsStore = useDataStore();
 const router = useRoute();
