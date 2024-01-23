@@ -1,4 +1,4 @@
-# 62teknologi-frontend-test-irfan-putranto-pratama
+# 62teknologi-frontend-test
 
 # Setup
 - install dependency
