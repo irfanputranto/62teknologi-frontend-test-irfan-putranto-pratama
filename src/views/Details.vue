@@ -27,6 +27,7 @@ const imgs = (img: []) => {
 </script>
 
 <template>
+    <h1 class="text-2xl">Business Detail</h1>
     <div class="flex" v-if="detailsStore.isLoading">
         <LoadingVue />
     </div>

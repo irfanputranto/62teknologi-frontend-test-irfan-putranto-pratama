@@ -16,3 +16,9 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
    1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
    2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+
+
+## CORS 
+If the API data does not appear, click the link: (https://cors-anywhere.herokuapp.com/corsdemo)
+
+![alt text](https://github.com/irfanputranto/62teknologi-frontend-test-irfan-putranto-pratama/request.png)
