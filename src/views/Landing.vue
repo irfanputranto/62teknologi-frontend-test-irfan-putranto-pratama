@@ -14,7 +14,7 @@ const store = useDataStore();
 const location = ref('United States');
 const filterInputData = ref('');
 
-const optionSortBy = ref('Sort By : ');
+const optionSortBy = ref('Sort By ');
 const sortByList = ref([
   {
     'label': 'Best Match',
@@ -180,7 +180,7 @@ const scrollToTop = () => {
 
 onMounted(() => {
   scrollToTop();
-  
+  store.currentPage = 1;
   dataBusiness({
     location: location.value,
     limit: store.itemsPerPage,
@@ -213,12 +213,16 @@ onMounted(() => {
     </section>
   </HeroVue>
 
-      <div class="flex items-center mt-3 sm:mx-auto ml-[13rem] md:mr-96 lg:mr-[30rem] xl:mr-[22rem]">
-        <div class="  lg:ml-auto">
-          <select-vue :label="optionSortBy" :options="sortByList" @option-selected="handlerSortBy"
-            :class="'p-2 w-full'" :class-title="''" />
-        </div>
+  <div class="container mx-auto mt-4">
+    <div class="grid grid-cols-3 gap-2">
+      <div class="grid grid-cols-subgrid gap-2 col-span-3">
+      <div class="col-start-2 lg:col-start-3">
+        <select-vue :label="optionSortBy" :options="sortByList" @option-selected="handlerSortBy"
+            :class="'p-2 w-36 lg:w-80'" :class-title="'mr-2'" />
       </div>
+      </div>
+    </div>
+  </div>
 
   <section class="min-h-screen">
 
@@ -230,6 +234,7 @@ onMounted(() => {
       <!-- loading  -->
 
       <!-- data list product business -->
+      
       <div v-if="!store.isLoading && !store.error">
         <div class="flex flex-wrap justify-center">
           <CardVue v-for="(business) in store.data.businesses" 

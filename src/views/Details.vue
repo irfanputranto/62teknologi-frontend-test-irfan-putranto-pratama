@@ -32,12 +32,9 @@ const imgs = (img: []) => {
     </div>
 
     <div v-if="!detailsStore.isLoading && detailsStore.singleData">
-        <fwb-carousel :pictures="imgs(detailsStore.singleData.photos)" animation :slide-interval="5000" class="mx-10" />
-
         <div class="flex p-4 bg-white rounded-md shadow-md mx-10 mt-10">
             <div class="flex-none w-1/2 mr-4">
-                <img :src="detailsStore.singleData.image_url" :alt="detailsStore.singleData.name"
-                    class="w-full h-80 object-cover rounded-md">
+                <fwb-carousel :pictures="imgs(detailsStore.singleData.photos)" animation :slide-interval="5000" class="mx-10" />
             </div>
 
             <div class="flex-grow">
@@ -58,15 +55,14 @@ const imgs = (img: []) => {
                     <div class="badge badge-info mr-2 text-white"
                         v-for="(item, index) in detailsStore.singleData.categories" :key="index">{{ item.title }}</div>
                 </div>
+
+                <!-- see on gmaps -->
+                <div class="mt-2">
+                <BMapsVue :latitude="detailsStore.singleData.coordinates.latitude"
+                :longtitude="detailsStore.singleData.coordinates.longitude" class="btn-error w-40" />
+                </div>
             </div>
         </div>
-
-        <!-- see on Gmaps -->
-        <div class="p-4 bg-white rounded-md shadow-md mx-10 mt-5">
-            <BMapsVue :latitude="detailsStore.singleData.coordinates.latitude"
-                :longtitude="detailsStore.singleData.coordinates.longitude" class="btn-primary w-full" />
-        </div>
-
         <!-- review  -->
         <ReviewVue :title="'Review'" :review-list="detailsStore.reviewList.reviews" />
     </div>

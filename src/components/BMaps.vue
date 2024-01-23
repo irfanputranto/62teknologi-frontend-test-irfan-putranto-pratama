@@ -9,5 +9,5 @@ const MapsLinks = computed(() => {
 
 </script>
 <template>
-        <a :href="MapsLinks" target="_blank" class="btn  rounded-md text-white">See on Google Maps</a>
+        <a :href="MapsLinks" target="_blank" class="btn  rounded-md text-white">See on Location</a>
 </template>

@@ -3,7 +3,7 @@ defineProps(['title', 'badge', 'description', 'image', 'categories', 'alt', 'loc
 </script>
 
 <template>
-  <div class="card w-96 bg-base-100 shadow-xl">
+  <div class="card w-96 bg-base-100 shadow-xl ">
     <figure >
       <img :src="image" :alt="alt" class="h-48 w-96 object-cover rounded-md"  />
     </figure>
