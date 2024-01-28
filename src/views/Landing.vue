@@ -98,18 +98,26 @@ const handlerSortBy = (event: CustomEvent) => {
 
   dataBusiness({
     location: location.value,
+    term: '',
+    price: '',
     limit: store.itemsPerPage,
+    offset: 0,
     sort_by: value,
+    radius: '',
   });
 }
 
-const handlePageChange = ({ offset, limit }) => {
+const handlePageChange = ({ offset = 0, limit = 10 }): void => {
   store.currentPage = Math.floor(offset / store.itemsPerPage) + 1;
 
   dataBusiness({
     location: location.value,
+    term: '',
+    price: '',
     offset: offset,
     limit: limit,
+    sort_by: '',
+    radius: '',
   })
 }
 
@@ -127,17 +135,26 @@ const filterDatas = () => {
   }
 
   if (searchByValue.value == 'term') {
+
     dataBusiness({
       location: location.value,
       term: filterInputData.value,
+      price: '',
       limit: store.itemsPerPage,
+      offset: 0,
+      sort_by: '',
+    radius: '',
     });
   }
 
   if (searchByValue.value == 'radius') {
     dataBusiness({
       location: location.value,
+      term: '',
+      price: '',
       limit: store.itemsPerPage,
+      offset: 0,
+      sort_by: '',
       radius: filterInputData.value,
     });
   }
@@ -145,8 +162,12 @@ const filterDatas = () => {
   if (searchByValue.value == 'price') {
     dataBusiness({
       location: location.value,
-      limit: store.itemsPerPage,
+      term: '',
       price: filterInputData.value,
+      limit: store.itemsPerPage,
+      offset: 0,
+      sort_by: '',
+    radius: '',
     });
   }
 }
@@ -156,9 +177,9 @@ const dataBusiness = (params = {
   term: '',
   price: '',
   limit: 0,
-  offset: '',
+  offset: 0,
   sort_by: '',
-  radius: 0,
+  radius: '',
 }) => {
   store.fetchData({
     location: params.location,
@@ -183,8 +204,12 @@ onMounted(() => {
   store.currentPage = 1;
   dataBusiness({
     location: location.value,
+    term: '',
+    price: '',
     limit: store.itemsPerPage,
     offset: store.offset,
+    sort_by: '',
+    radius: '',
   });
 });
 </script>

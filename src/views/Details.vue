@@ -6,11 +6,11 @@ import LoadingVue from '../components/Loading.vue';
 import RatingVue from '../components/Rating.vue';
 import ReviewVue from '../components/Review.vue';
 import BMapsVue from '../components/BMaps.vue';
-import { FwbCarousel } from 'flowbite-vue'
+import { FwbCarousel } from 'flowbite-vue';
 
 const detailsStore = useDataStore();
 const router = useRoute();
-const detailIds = ref(router.params.id);
+const detailIds = ref<string[]|string>(router.params.id);
 
 onMounted(() => {
     detailsStore.fetchDataDetail(detailIds.value);
@@ -18,7 +18,7 @@ onMounted(() => {
     reviewList(detailIds.value);
 })
 
-const imgs = (img: []) => {
+const imgs = (img: any) => {
     return img.map((item: { src: string, alt: string }) => ({
         src: item,
         alt: 'img-' + 1,
